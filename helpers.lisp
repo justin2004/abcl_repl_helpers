@@ -11,7 +11,6 @@
 (defun c-sum (cname)
   "class summary -- given a class name (or java-object) print its methods with their sigs"
   (let* ((c (if (typep cname 'java:java-object)
-                ;(jclass-of cname)   ; this is wrong -- it turned a QueryFactory to java.lang.Class
                 cname
                 (jclass cname)))
          (methods (map 'list 
